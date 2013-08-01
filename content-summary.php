@@ -17,11 +17,16 @@
                     </header>
 
                     <footer class="entry-meta">
+                        <span class="meta_span date">
+                            <span class="month"><?php the_time('M') ?></span>
+                            <span class="date"><?php the_time('d') ?></span>
+                        </span>
                         <span class="meta_span">Views:<?php
                             if (function_exists(the_views)) {
                                 the_views('', true);
                             }
                             ?></span>
+                        <span class="meta_span">Category: <?php the_category(', ') ?></span>
                         <span class="meta_span">Comments:<?php comments_popup_link('0', '1', '%'); ?></span>
                         <span class="meta_span">Tags:<?php the_tags('', ', ', ''); ?></span>
                     </footer>
