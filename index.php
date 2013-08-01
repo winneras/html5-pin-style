@@ -11,20 +11,17 @@
             </div>
         <?php endif; ?>
 
-        <div id="content" role="main">
+        <div id="content" role="main" class="index">
 
 
             <?php /* Start the Loop */ ?>
             <?php while (have_posts()) : the_post(); ?>
-                <h1>
-                    <?php the_title(); ?>
-                </h1>
-                <div>
-                    <?php the_content(); ?>
-                </div>
+
+                <?php get_template_part('content', 'summary'); ?>
+
             <?php endwhile; ?>
 
-
+            <?php ph_content_nav('nav-below'); ?>
         </div><!-- #content -->
     </div><!-- #primary -->
 </div><!-- #main .wrapper -->
