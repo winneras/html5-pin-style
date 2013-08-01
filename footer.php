@@ -1,7 +1,7 @@
 
 <footer id="colophon" role="contentinfo">
     <?php if (is_active_sidebar('widget-footer')) : ?>
-        <div id="footer-wedgits">
+        <div id="footer-wedgits" class="row clearfix">
 
             <?php dynamic_sidebar('Footer'); ?>
 
