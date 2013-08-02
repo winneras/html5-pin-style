@@ -1,13 +1,7 @@
-/* Welcome
-Theme Name:     Html5 Pin Style for Wordpress
-Theme URI:      http://demo.winjiejie.com/
-Description:    HTML5 and CSS3 only Pinterest Style Theme
-Author:         winneras
-Author URI:     http://winjiejie.com/
-Version:        0.0.1
-License:	GPL 2.0
-Tags: 		html5, css3, pin, pinterest
-*/
+/* Welcome to Compass.
+    * In this file you should write your main styles. (or centralize your imports)
+    * Import this file using the following HTML or equivalent:
+* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -393,4 +387,147 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/*grid*/
+/*global*/
+/* line 11, sass/style.scss */
+body {
+  background: #dddddd;
+  font-size: 17px;
+}
+
+/* line 15, sass/style.scss */
+a {
+  text-decoration: none;
+  color: #ea0000;
+}
+
+/* Nicolas Gallagher's micro clearfix */
+/* line 21, sass/style.scss */
+.row:before, .row:after, .clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 22, sass/style.scss */
+.row:after, .clearfix:after {
+  clear: both;
+}
+
+/* line 23, sass/style.scss */
+.row, .clearfix {
+  zoom: 1;
+}
+
+/*header*/
+/* line 26, sass/style.scss */
+#main-header {
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 7px 0 0;
+}
+
+/* line 38, sass/style.scss */
+#site-title-description {
+  text-align: center;
+}
+
+/* line 42, sass/style.scss */
+#site-title {
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+/* line 47, sass/style.scss */
+#top-navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 12px 0 0;
+}
+
+/* line 54, sass/style.scss */
+#top-navigation ul, #top-navigation li {
+  float: right;
+  list-style: none;
+  margin: 0 5px;
+  padding: 0 5px;
+}
+
+/* line 62, sass/style.scss */
+#top-navigation a {
+  color: #666666;
+}
+
+/*main*/
+/* line 69, sass/style.scss */
+#page.container {
+  max-width: 960px;
+  min-width: 720px;
+  margin: 0 auto;
+}
+
+/* line 75, sass/style.scss */
+#main {
+  margin: 44px 0 0;
+  padding: 20px 0;
+}
+
+/*pin*/
+/* line 83, sass/style.scss */
+.columns {
+  width: 100%;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  -ms-column-count: 3;
+  -o-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  -ms-column-gap: 20px;
+  -o-column-gap: 20px;
+  column-gap: 20px;
+  padding: 0 10px;
+}
+
+/* line 90, sass/style.scss */
+.pin {
+  display: inline-block;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  margin: 20px 0;
+  padding: 10px;
+}
+
+/* line 97, sass/style.scss */
+.pin img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width: 1280px) {
+  /* line 102, sass/style.scss */
+  #page.container {
+    width: 1280px;
+    max-width: 1280px;
+    min-width: 1280px;
+  }
+
+  /* line 107, sass/style.scss */
+  .columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    -ms-column-count: 4;
+    -o-column-count: 4;
+    column-count: 4;
+  }
 }

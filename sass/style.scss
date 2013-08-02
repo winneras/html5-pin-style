@@ -1,6 +1,114 @@
 /* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+    * In this file you should write your main styles. (or centralize your imports)
+    * Import this file using the following HTML or equivalent:
+* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "components/reset";
+@import "components/variables";
+
+@import "compass/css3";
+/*global*/
+body {
+    background: $color-gray;
+    font-size: $font-size-m;
+}
+a {
+    text-decoration: none;
+    color: $color-red;
+}
+
+/* Nicolas Gallagher's micro clearfix */
+.row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
+.row:after, .clearfix:after { clear: both; }
+.row, .clearfix { zoom: 1; }
+
+/*header*/
+#main-header {
+    @include single-box-shadow;
+    height: 44px;
+    background: $color-white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 7px 0 0;
+}
+
+#site-title-description{
+    text-align: center;
+}
+
+#site-title{
+    font-size: $font-size-xl;
+    margin: 0 auto;
+}
+
+#top-navigation{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 12px 0 0;
+}
+
+#top-navigation ul, #top-navigation li {
+    float: right;
+    list-style: none;
+    margin: 0 5px;
+    padding: 0 5px;
+    
+}
+
+#top-navigation a{
+    color: $color-menu;
+}
+
+
+
+/*main*/
+#page.container{
+    max-width: 960px; 
+    min-width: 720px; 
+    margin: 0 auto;
+}
+
+#main {
+    margin: 44px 0 0;
+    padding: 20px 0;
+}
+
+
+/*pin*/
+
+.columns {
+    width: 100%; 
+    @include column-count(3);
+    @include column-gap(20px);
+    padding: 0 10px;
+}
+
+.pin{
+    display: inline-block;
+    width: 100%;
+    background: $color-white;
+    margin: 20px 0;
+    padding: 10px;
+}
+.pin img{
+    width:100%;
+    height:auto;
+}
+@media only screen and (min-width: 1280px){
+    #page.container{
+        width:1280px;
+        max-width:1280px;
+        min-width:1280px;
+    }
+    .columns {
+        @include column-count(4);
+        
+    }
+}
+
+
+

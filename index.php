@@ -21,9 +21,10 @@
 
             <?php endwhile; ?>
 
-            <?php ph_content_nav('nav-below'); ?>
-        </div><!-- #content -->
+            
+       </div><!-- #content -->
     </div><!-- #primary -->
+    <?php ph_content_nav('nav-below'); ?>
 </div><!-- #main .wrapper -->
 
 <?php get_footer(); ?>

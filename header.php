@@ -9,7 +9,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	<title>
 		<?php
 		wp_title( '&mdash;', true, 'right' );
@@ -27,17 +27,9 @@
 		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
 	<![endif]-->
 <div id="page" class="container">
-	<header id="main-header" role="banner">
-            <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-                <div>
-                    <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
-                    
-                    <button type="submit" id="searchsubmit"><i class="iconfont">Search</i></button>
-                </div>
-            </form>
+	<header id="main-header" role="banner" class="clearfix">
 		<hgroup id="site-title-description">
 			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 
             
