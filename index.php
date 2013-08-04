@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main" class="wrapper">
+<div id="main" class="wrapper clearfix">
 
     <div id="primary" class="site-content columns">
         <?php if (is_active_sidebar('widget-inline')) : ?>

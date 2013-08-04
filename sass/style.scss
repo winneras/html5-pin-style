@@ -9,8 +9,8 @@
 @import "compass/css3";
 /*global*/
 body {
-    background: $color-gray;
-    font-size: $font-size-l;
+    background: $color-bg;
+    font-size: $font-size-m;
     line-height: 1.2;
 }
 a {
@@ -18,12 +18,40 @@ a {
     color: $color-red;
 }
 h1{
-    font-size: $font-size-xxl;
-    line-height: 1.5em;
+    font-size: $font-size-xl;
+    line-height: 1.5;
 }
+
+h2{
+    font-size: $font-size-l;
+    line-height: 1.2;
+}
+h3{
+    font-size: $font-size-m;
+    line-height:1.2;
+    margin: 0.5em 0;
+}
+
 
 .single .entry-title{
     font-size: $font-size-xxxl;
+}
+
+.nodisplay{
+    display: none;
+}
+
+.widget ul, .widget li{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.alignleft{
+    text-align: left;
+}
+.alignright{
+    text-align: right;
 }
 
 /* Nicolas Gallagher's micro clearfix */
@@ -44,6 +72,10 @@ h1{
     padding: 7px 0 0;
 }
 
+.admin-bar #main-header{
+    top: 28px;
+}
+
 #site-title-description{
     text-align: center;
 }
@@ -54,10 +86,11 @@ h1{
 }
 
 #top-navigation{
-    position: fixed;
-    top: 0;
+    position: relative;;
+    top: -42px;
     right: 0;
     padding: 12px 0 0;
+    font-size: $font-size-m;
 }
 
 #top-navigation ul, #top-navigation li {
@@ -84,9 +117,8 @@ h1{
     margin: 0 auto;
 }
 #main {
-    margin: 44px auto 0;
-    padding: 20px 0;
-    
+    margin: 44px auto 0;  
+    padding: 10px 0;
 }
 
 
@@ -103,13 +135,23 @@ h1{
     display: inline-block;
     width: 100%;
     background: $color-white;
-    margin: 20px 0;
+    margin: 10px 0;
     padding: 10px;
     @include box-shadow(rgba(0,0,0,0.33) 0px 1px 3px);
 }
 .pin img{
     width:100%;
     height:auto;
+}
+.pin .post-content{
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-bg;
+    color: #000;
+}
+
+.pin .entry-title{
+    margin: 5px 0 0 0;
+    line-height: 1.3;
 }
 @media only screen and (min-width: 1280px){
     .wrapper{
@@ -123,6 +165,9 @@ h1{
     }
 }
 
+/*bottom nav*/
+
+
 
 /*footer*/
 
@@ -132,7 +177,17 @@ footer#colophon{
 }
 .row .widget{
     float:left;
+    margin: 1em;
 }
 
 
+
+/*index cal style date*/
+.meta_span.date{
+    font-size: $font-size-xs;
+    color: $color-gray;
+    
+}
+
+/*widget*/
 

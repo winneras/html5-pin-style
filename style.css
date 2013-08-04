@@ -395,7 +395,7 @@ table {
 /* line 11, sass/style.scss */
 body {
   background: #dddddd;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.2;
 }
 
@@ -407,34 +407,69 @@ a {
 
 /* line 20, sass/style.scss */
 h1 {
-  font-size: 28px;
-  line-height: 1.5em;
+  font-size: 24px;
+  line-height: 1.5;
 }
 
 /* line 25, sass/style.scss */
+h2 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* line 29, sass/style.scss */
+h3 {
+  font-size: 17px;
+  line-height: 1.2;
+  margin: 0.5em 0;
+}
+
+/* line 36, sass/style.scss */
 .single .entry-title {
   font-size: 38px;
 }
 
+/* line 40, sass/style.scss */
+.nodisplay {
+  display: none;
+}
+
+/* line 44, sass/style.scss */
+.widget ul, .widget li {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+/* line 50, sass/style.scss */
+.alignleft {
+  text-align: left;
+}
+
+/* line 53, sass/style.scss */
+.alignright {
+  text-align: right;
+}
+
 /* Nicolas Gallagher's micro clearfix */
-/* line 30, sass/style.scss */
+/* line 58, sass/style.scss */
 .row:before, .row:after, .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
 
-/* line 31, sass/style.scss */
+/* line 59, sass/style.scss */
 .row:after, .clearfix:after {
   clear: both;
 }
 
-/* line 32, sass/style.scss */
+/* line 60, sass/style.scss */
 .row, .clearfix {
   zoom: 1;
 }
 
 /*header*/
-/* line 35, sass/style.scss */
+/* line 63, sass/style.scss */
 #main-header {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -449,26 +484,32 @@ h1 {
   padding: 7px 0 0;
 }
 
-/* line 47, sass/style.scss */
+/* line 75, sass/style.scss */
+.admin-bar #main-header {
+  top: 28px;
+}
+
+/* line 79, sass/style.scss */
 #site-title-description {
   text-align: center;
 }
 
-/* line 51, sass/style.scss */
+/* line 83, sass/style.scss */
 #site-title {
   font-size: 24px;
   margin: 0 auto;
 }
 
-/* line 56, sass/style.scss */
+/* line 88, sass/style.scss */
 #top-navigation {
-  position: fixed;
-  top: 0;
+  position: relative;
+  top: -42px;
   right: 0;
   padding: 12px 0 0;
+  font-size: 17px;
 }
 
-/* line 63, sass/style.scss */
+/* line 96, sass/style.scss */
 #top-navigation ul, #top-navigation li {
   float: right;
   list-style: none;
@@ -476,27 +517,27 @@ h1 {
   padding: 0 5px;
 }
 
-/* line 71, sass/style.scss */
+/* line 104, sass/style.scss */
 #top-navigation a {
   color: #666666;
 }
 
 /*main*/
-/* line 81, sass/style.scss */
+/* line 114, sass/style.scss */
 .wrapper {
   max-width: 960px;
   min-width: 720px;
   margin: 0 auto;
 }
 
-/* line 86, sass/style.scss */
+/* line 119, sass/style.scss */
 #main {
   margin: 44px auto 0;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 /*pin*/
-/* line 95, sass/style.scss */
+/* line 127, sass/style.scss */
 .columns {
   width: 100%;
   -webkit-column-count: 3;
@@ -512,33 +553,46 @@ h1 {
   padding: 0 10px;
 }
 
-/* line 102, sass/style.scss */
+/* line 134, sass/style.scss */
 .pin {
   display: inline-block;
   width: 100%;
   background: rgba(255, 255, 255, 0.85);
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px;
   box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px;
 }
 
-/* line 110, sass/style.scss */
+/* line 142, sass/style.scss */
 .pin img {
   width: 100%;
   height: auto;
 }
 
+/* line 146, sass/style.scss */
+.pin .post-content {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dddddd;
+  color: #000;
+}
+
+/* line 152, sass/style.scss */
+.pin .entry-title {
+  margin: 5px 0 0 0;
+  line-height: 1.3;
+}
+
 @media only screen and (min-width: 1280px) {
-  /* line 115, sass/style.scss */
+  /* line 157, sass/style.scss */
   .wrapper {
     width: 1280px;
     max-width: 1280px;
     min-width: 1280px;
   }
 
-  /* line 120, sass/style.scss */
+  /* line 162, sass/style.scss */
   .columns {
     -webkit-column-count: 4;
     -moz-column-count: 4;
@@ -547,8 +601,9 @@ h1 {
     column-count: 4;
   }
 }
+/*bottom nav*/
 /*footer*/
-/* line 129, sass/style.scss */
+/* line 174, sass/style.scss */
 footer#colophon {
   background: rgba(255, 255, 255, 0.85);
   -webkit-box-shadow: 0px 0px 5px #333333;
@@ -556,7 +611,17 @@ footer#colophon {
   box-shadow: 0px 0px 5px #333333;
 }
 
-/* line 133, sass/style.scss */
+/* line 178, sass/style.scss */
 .row .widget {
   float: left;
+  margin: 1em;
 }
+
+/*index cal style date*/
+/* line 186, sass/style.scss */
+.meta_span.date {
+  font-size: 11px;
+  color: #999999;
+}
+
+/*widget*/
