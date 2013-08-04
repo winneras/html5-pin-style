@@ -8,12 +8,13 @@
 /* line 5, sass/components/_reset.scss */
 * {
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
-/* line 25, sass/components/_reset.scss */
+/* line 26, sass/components/_reset.scss */
 article,
 aside,
 details,
@@ -33,7 +34,7 @@ main {
 /*
  * Corrects `inline-block` display not defined in IE 8/9.
  */
-/* line 35, sass/components/_reset.scss */
+/* line 36, sass/components/_reset.scss */
 audio,
 canvas,
 video {
@@ -44,7 +45,7 @@ video {
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 44, sass/components/_reset.scss */
+/* line 45, sass/components/_reset.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -53,7 +54,7 @@ audio:not([controls]) {
 /*
  * Addresses styling for `hidden` attribute not present in IE 8/9.
  */
-/* line 53, sass/components/_reset.scss */
+/* line 54, sass/components/_reset.scss */
 [hidden] {
   display: none;
 }
@@ -66,7 +67,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 67, sass/components/_reset.scss */
+/* line 68, sass/components/_reset.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -79,7 +80,7 @@ html {
 /*
  * Removes default margin.
  */
-/* line 77, sass/components/_reset.scss */
+/* line 78, sass/components/_reset.scss */
 body {
   margin: 0;
 }
@@ -90,7 +91,7 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-/* line 89, sass/components/_reset.scss */
+/* line 90, sass/components/_reset.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -98,7 +99,7 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-/* line 98, sass/components/_reset.scss */
+/* line 99, sass/components/_reset.scss */
 a:active,
 a:hover {
   outline: 0;
@@ -111,7 +112,7 @@ a:hover {
  * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
  * Safari 5, and Chrome.
  */
-/* line 111, sass/components/_reset.scss */
+/* line 112, sass/components/_reset.scss */
 h1 {
   font-size: 2em;
 }
@@ -119,7 +120,7 @@ h1 {
 /*
  * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
  */
-/* line 119, sass/components/_reset.scss */
+/* line 120, sass/components/_reset.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -127,7 +128,7 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 128, sass/components/_reset.scss */
+/* line 129, sass/components/_reset.scss */
 b,
 strong {
   font-weight: bold;
@@ -136,7 +137,7 @@ strong {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-/* line 136, sass/components/_reset.scss */
+/* line 137, sass/components/_reset.scss */
 dfn {
   font-style: italic;
 }
@@ -144,7 +145,7 @@ dfn {
 /*
  * Addresses styling not present in IE 8/9.
  */
-/* line 144, sass/components/_reset.scss */
+/* line 145, sass/components/_reset.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -153,7 +154,7 @@ mark {
 /*
  * Corrects font family set oddly in Safari 5 and Chrome.
  */
-/* line 156, sass/components/_reset.scss */
+/* line 157, sass/components/_reset.scss */
 code,
 kbd,
 pre,
@@ -165,7 +166,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-/* line 165, sass/components/_reset.scss */
+/* line 166, sass/components/_reset.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -175,7 +176,7 @@ pre {
 /*
  * Sets consistent quote types.
  */
-/* line 175, sass/components/_reset.scss */
+/* line 176, sass/components/_reset.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -183,7 +184,7 @@ q {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-/* line 183, sass/components/_reset.scss */
+/* line 184, sass/components/_reset.scss */
 small {
   font-size: 80%;
 }
@@ -191,7 +192,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 192, sass/components/_reset.scss */
+/* line 193, sass/components/_reset.scss */
 sub,
 sup {
   font-size: 75%;
@@ -200,12 +201,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 199, sass/components/_reset.scss */
+/* line 200, sass/components/_reset.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 203, sass/components/_reset.scss */
+/* line 204, sass/components/_reset.scss */
 sub {
   bottom: -0.25em;
 }
@@ -216,7 +217,7 @@ sub {
 /*
  * Removes border when inside `a` element in IE 8/9.
  */
-/* line 215, sass/components/_reset.scss */
+/* line 216, sass/components/_reset.scss */
 img {
   border: 0;
 }
@@ -224,7 +225,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-/* line 223, sass/components/_reset.scss */
+/* line 224, sass/components/_reset.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -235,7 +236,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 8/9 and Safari 5.
  */
-/* line 235, sass/components/_reset.scss */
+/* line 236, sass/components/_reset.scss */
 figure {
   margin: 0;
 }
@@ -246,7 +247,7 @@ figure {
 /*
  * Define consistent border, margin, and padding.
  */
-/* line 247, sass/components/_reset.scss */
+/* line 248, sass/components/_reset.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -257,7 +258,7 @@ fieldset {
  * 1. Corrects color not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 258, sass/components/_reset.scss */
+/* line 259, sass/components/_reset.scss */
 legend {
   border: 0;
   /* 1 */
@@ -270,7 +271,7 @@ legend {
  * 2. Corrects font size not being inherited in all browsers.
  * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
  */
-/* line 272, sass/components/_reset.scss */
+/* line 273, sass/components/_reset.scss */
 button,
 input,
 select,
@@ -287,7 +288,7 @@ textarea {
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 284, sass/components/_reset.scss */
+/* line 285, sass/components/_reset.scss */
 button,
 input {
   line-height: normal;
@@ -300,7 +301,7 @@ input {
  * 3. Improves usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 299, sass/components/_reset.scss */
+/* line 300, sass/components/_reset.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -314,7 +315,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-/* line 309, sass/components/_reset.scss */
+/* line 310, sass/components/_reset.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -323,7 +324,7 @@ input[disabled] {
 /*
  * 2. Removes excess padding in IE 8/9.
  */
-/* line 318, sass/components/_reset.scss */
+/* line 319, sass/components/_reset.scss */
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
@@ -335,7 +336,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 328, sass/components/_reset.scss */
+/* line 329, sass/components/_reset.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -349,7 +350,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 341, sass/components/_reset.scss */
+/* line 342, sass/components/_reset.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -358,7 +359,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 4+.
  */
-/* line 350, sass/components/_reset.scss */
+/* line 351, sass/components/_reset.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -369,7 +370,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-/* line 360, sass/components/_reset.scss */
+/* line 361, sass/components/_reset.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -383,7 +384,7 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-/* line 373, sass/components/_reset.scss */
+/* line 374, sass/components/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -394,34 +395,46 @@ table {
 /* line 11, sass/style.scss */
 body {
   background: #dddddd;
-  font-size: 17px;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
-/* line 15, sass/style.scss */
+/* line 16, sass/style.scss */
 a {
   text-decoration: none;
   color: #ea0000;
 }
 
+/* line 20, sass/style.scss */
+h1 {
+  font-size: 28px;
+  line-height: 1.5em;
+}
+
+/* line 25, sass/style.scss */
+.single .entry-title {
+  font-size: 38px;
+}
+
 /* Nicolas Gallagher's micro clearfix */
-/* line 21, sass/style.scss */
+/* line 30, sass/style.scss */
 .row:before, .row:after, .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
 
-/* line 22, sass/style.scss */
+/* line 31, sass/style.scss */
 .row:after, .clearfix:after {
   clear: both;
 }
 
-/* line 23, sass/style.scss */
+/* line 32, sass/style.scss */
 .row, .clearfix {
   zoom: 1;
 }
 
 /*header*/
-/* line 26, sass/style.scss */
+/* line 35, sass/style.scss */
 #main-header {
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
@@ -436,18 +449,18 @@ a {
   padding: 7px 0 0;
 }
 
-/* line 38, sass/style.scss */
+/* line 47, sass/style.scss */
 #site-title-description {
   text-align: center;
 }
 
-/* line 42, sass/style.scss */
+/* line 51, sass/style.scss */
 #site-title {
   font-size: 24px;
   margin: 0 auto;
 }
 
-/* line 47, sass/style.scss */
+/* line 56, sass/style.scss */
 #top-navigation {
   position: fixed;
   top: 0;
@@ -455,7 +468,7 @@ a {
   padding: 12px 0 0;
 }
 
-/* line 54, sass/style.scss */
+/* line 63, sass/style.scss */
 #top-navigation ul, #top-navigation li {
   float: right;
   list-style: none;
@@ -463,27 +476,27 @@ a {
   padding: 0 5px;
 }
 
-/* line 62, sass/style.scss */
+/* line 71, sass/style.scss */
 #top-navigation a {
   color: #666666;
 }
 
 /*main*/
-/* line 69, sass/style.scss */
-#page.container {
+/* line 81, sass/style.scss */
+.wrapper {
   max-width: 960px;
   min-width: 720px;
   margin: 0 auto;
 }
 
-/* line 75, sass/style.scss */
+/* line 86, sass/style.scss */
 #main {
-  margin: 44px 0 0;
+  margin: 44px auto 0;
   padding: 20px 0;
 }
 
 /*pin*/
-/* line 83, sass/style.scss */
+/* line 95, sass/style.scss */
 .columns {
   width: 100%;
   -webkit-column-count: 3;
@@ -499,30 +512,33 @@ a {
   padding: 0 10px;
 }
 
-/* line 90, sass/style.scss */
+/* line 102, sass/style.scss */
 .pin {
   display: inline-block;
   width: 100%;
   background: rgba(255, 255, 255, 0.85);
   margin: 20px 0;
   padding: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px;
+  box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 3px;
 }
 
-/* line 97, sass/style.scss */
+/* line 110, sass/style.scss */
 .pin img {
   width: 100%;
   height: auto;
 }
 
 @media only screen and (min-width: 1280px) {
-  /* line 102, sass/style.scss */
-  #page.container {
+  /* line 115, sass/style.scss */
+  .wrapper {
     width: 1280px;
     max-width: 1280px;
     min-width: 1280px;
   }
 
-  /* line 107, sass/style.scss */
+  /* line 120, sass/style.scss */
   .columns {
     -webkit-column-count: 4;
     -moz-column-count: 4;
@@ -530,4 +546,17 @@ a {
     -o-column-count: 4;
     column-count: 4;
   }
+}
+/*footer*/
+/* line 129, sass/style.scss */
+footer#colophon {
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+}
+
+/* line 133, sass/style.scss */
+.row .widget {
+  float: left;
 }

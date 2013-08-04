@@ -10,11 +10,20 @@
 /*global*/
 body {
     background: $color-gray;
-    font-size: $font-size-m;
+    font-size: $font-size-l;
+    line-height: 1.2;
 }
 a {
     text-decoration: none;
     color: $color-red;
+}
+h1{
+    font-size: $font-size-xxl;
+    line-height: 1.5em;
+}
+
+.single .entry-title{
+    font-size: $font-size-xxxl;
 }
 
 /* Nicolas Gallagher's micro clearfix */
@@ -67,14 +76,17 @@ a {
 
 /*main*/
 #page.container{
+    
+}
+.wrapper{
     max-width: 960px; 
-    min-width: 720px; 
+    min-width: 720px;
     margin: 0 auto;
 }
-
 #main {
-    margin: 44px 0 0;
+    margin: 44px auto 0;
     padding: 20px 0;
+    
 }
 
 
@@ -93,13 +105,14 @@ a {
     background: $color-white;
     margin: 20px 0;
     padding: 10px;
+    @include box-shadow(rgba(0,0,0,0.33) 0px 1px 3px);
 }
 .pin img{
     width:100%;
     height:auto;
 }
 @media only screen and (min-width: 1280px){
-    #page.container{
+    .wrapper{
         width:1280px;
         max-width:1280px;
         min-width:1280px;
@@ -108,6 +121,17 @@ a {
         @include column-count(4);
         
     }
+}
+
+
+/*footer*/
+
+footer#colophon{
+    background: $color-white;
+    @include single-box-shadow;
+}
+.row .widget{
+    float:left;
 }
 
 
