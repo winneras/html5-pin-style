@@ -8,8 +8,11 @@
 
 @import "compass/css3";
 /*global*/
+*{
+    @include box-sizing(border-box);
+}
 body {
-    background: $color-bg;
+    background: $color-bg url('images/handmadepaper.png') repeat;
     font-size: $font-size-m;
     line-height: 1.2;
 }
@@ -49,11 +52,16 @@ h3{
 
 .alignleft{
     text-align: left;
+    float: left;
 }
 .alignright{
     text-align: right;
+    float: right;
 }
 
+footer.entry-meta{
+    font-size: $font-size-s;
+}
 /* Nicolas Gallagher's micro clearfix */
 .row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
 .row:after, .clearfix:after { clear: both; }
@@ -178,6 +186,7 @@ footer#colophon{
 .row .widget{
     float:left;
     margin: 1em;
+    max-width: 300px;
 }
 
 
@@ -191,3 +200,20 @@ footer#colophon{
 
 /*widget*/
 
+
+
+/*icons*/
+
+@import "icon/*.png";
+@include all-icon-sprites;
+
+.icon{
+    display: inline-block;
+    height: 15px;
+    width: 19px;
+    position: relative;
+    top: 2px;
+}
+.icon-sprite, .icon-author, .icon-cats, .icon-comments, .icon-icon-tags, .icon-rss, .icon-views {
+
+}

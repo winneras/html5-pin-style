@@ -8,7 +8,7 @@
                 <div class="post-content nodisplay">
                 <?php else : ?>
                     <div class="post-content">
-                <?php endif; ?>
+                    <?php endif; ?>
 
                     <?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 380, "..."); ?>
                 </div>
@@ -31,14 +31,15 @@
     <footer class="entry-meta">
 
         <div class="meta-info">
-            <span class="meta_span">Views:<?php
-                if (function_exists(the_views)) {
-                    the_views('???', true);
-                }
-                ?></span>
-            <span class="meta_span">Category: <?php the_category(', ') ?></span>
-            <span class="meta_span">Comments:<?php comments_popup_link('0', '1', '%'); ?></span>
-            <span class="meta_span">Tags:<?php the_tags('', ', ', ''); ?></span>
+            <span class="meta_span">
+                <?php if (function_exists(the_views)) : ?>
+                    <span class="icon icon-views"></span>
+                    <?php the_views('???', true); ?>
+                <?php endif; ?>
+            </span>
+            <span class="meta_span"><span class="icon icon-comments"></span><?php comments_popup_link('0', '1', '%'); ?></span>
+            <span class="meta_span"><span class="icon icon-cats"></span><?php the_category(', ') ?></span>
+            <span class="meta_span"><span class="icon icon-tags"></span><?php the_tags('', ', ', ''); ?></span>
         </div>
     </footer>
 </article>
