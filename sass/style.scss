@@ -44,10 +44,20 @@ h3{
     display: none;
 }
 
-.widget ul, .widget li{
+.widget ul{
     margin: 0;
     list-style: none;
     padding: 0;
+}
+
+.widget li{
+    list-style: none;
+    margin:0;
+    padding: 5px;
+    border-bottom: 1px $color-gray dashed;
+}
+.widget li:first-child{
+    border-top: 1px $color-gray solid;
 }
 
 .alignleft{
@@ -62,6 +72,28 @@ h3{
 footer.entry-meta{
     font-size: $font-size-s;
 }
+
+/*search form*/
+
+#searchform > * {
+    display: block;
+    float: left;
+    height: 32px;
+    margin-right: 20px;
+}
+#searchsubmit{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+}
+.icon-search{
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+}
+
+
 /* Nicolas Gallagher's micro clearfix */
 .row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
 .row:after, .clearfix:after { clear: both; }
@@ -78,6 +110,7 @@ footer.entry-meta{
     right: 0;
     width: 100%;
     padding: 7px 0 0;
+    z-index: 99;
 }
 
 .admin-bar #main-header{
@@ -182,11 +215,14 @@ footer.entry-meta{
 footer#colophon{
     background: $color-white;
     @include single-box-shadow;
+    min-width: 720px;
 }
 .row .widget{
     float:left;
-    margin: 1em;
+    margin: 10px;
     max-width: 300px;
+    min-width:220px;
+    padding: 10px;
 }
 
 
