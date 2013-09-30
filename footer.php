@@ -1,5 +1,5 @@
 
-<footer id="colophon" role="contentinfo">
+<footer id="colophon" role="contentinfo" class="navbar navbar-default">
     <div class="container">
         <?php if (is_active_sidebar('widget-footer')) : ?>
             <div id="footer-wedgits" class="row clearfix">
