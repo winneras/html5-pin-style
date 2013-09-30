@@ -11,4 +11,12 @@ Tags: pin masonry bootstrap
 -------------------------------------------------------------- */
 
 @import url("libs/css/bootstrap.min.css");
-@import url("libs/css/bootstrap-responsive.min.css");
+@import url("libs/css/bootstrap-theme.min.css");
+
+#page > .container{
+    padding-top: 60px;
+}
+
+footer#colophon{
+    background-color:#f8f8f8; 
+}

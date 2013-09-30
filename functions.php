@@ -6,6 +6,28 @@ if (function_exists('add_theme_support')) {
 add_filter('the_generator', 'ph_wp_generator');
 add_action('widgets_init', 'ph_widgets');
 
+//change wordpress default menu li class to bootstrap default
+add_filter('nav_menu_css_class', 'ph_nav_class', 10, 2);
+
+function ph_nav_class($classes, $item) {
+    if (in_array('current-menu-item', $classes)) {
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+
+//load bootstrap and other js
+add_action('wp_enqueue_scripts', 'ph_enqueue_scripts');
+
+function ph_enqueue_scripts() {
+    wp_enqueue_script('jquery', '', '', '', TRUE);
+    wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/libs/js/bootstrap.min.js', '', '', TRUE);
+    if (!is_single()) {
+        wp_enqueue_script('masonry', get_stylesheet_directory_uri() . '/libs/js/masonry.pkgd.min.js', '', '', TRUE);
+        wp_enqueue_script('masonry-custom', get_stylesheet_directory_uri() . '/libs/js/masonry.custom.js', '', '', TRUE);
+    }
+}
+
 register_nav_menu('top_menu', 'Top Menu');
 
 function ph_wp_generator() {

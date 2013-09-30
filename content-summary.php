@@ -1,9 +1,9 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class("pin"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(array('col-md-4','col-lg-3','masonry-item')); ?>>
     <div class="entry-content">
         <a href="<?php the_permalink(); ?>" title="" rel="bookmark">
             <?php if (has_post_thumbnail()): ?>
                 <div class="post-thumb">
-                    <?php the_post_thumbnail('category-thumb'); ?>
+                    <?php the_post_thumbnail('category-thumb',array('class' => 'img-responsive')); ?>
                 </div>
                 <div class="post-content nodisplay">
                 <?php else : ?>
