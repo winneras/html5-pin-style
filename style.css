@@ -13,6 +13,9 @@ Tags: pin masonry bootstrap
 @import url("libs/css/bootstrap.min.css");
 @import url("libs/css/bootstrap-theme.min.css");
 
+.nodisplay{
+    display: none;
+}
 body{
     background: #dddddd url("images/handmadepaper.png") repeat;
 }
@@ -25,10 +28,18 @@ body.admin-bar .navbar-fixed-top{
 header#main-header{
     background: rgba(255, 255, 255, 0.85);
 }
+.navbar .navbar-nav>.active>a {
+    -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+}
 #page > .container{
     padding-top: 60px;
 }
-
+.masonry-container h1.entry-title{
+    font-size: 24px;
+}
+.masonry-item{
+    margin: 5px auto;
+}
 footer#colophon{
     background: rgba(255, 255, 255, 0.85);
     margin-bottom: 0;
