@@ -31,13 +31,12 @@
             <div class="meta-info">
                 <span class="meta_span">
                     <?php if (function_exists(the_views)) : ?>
-                        <span class="icon icon-views"></span>
-                        <?php the_views('???', true); ?>
+                        <span class="glyphicon glyphicon-book"></span><?php the_views('???', true); ?>
                     <?php endif; ?>
                 </span>
-                <span class="meta_span"><span class="icon icon-comments"></span><?php comments_popup_link('0', '1', '%'); ?></span>
-                <span class="meta_span"><span class="icon icon-cats"></span><?php the_category(', ') ?></span>
-                <span class="meta_span"><span class="icon icon-tags"></span><?php the_tags('', ', ', ''); ?></span>
+                <span class="meta_span"><span class="glyphicon glyphicon-comment"></span><?php comments_popup_link('0', '1', '%'); ?></span>
+                <span class="meta_span"><span class="glyphicon glyphicon-th-large"></span><?php the_category(', ') ?></span>
+                <span class="meta_span"><span class="glyphicon glyphicon-tags"></span><?php the_tags('', ', ', ''); ?></span>
             </div>
         </footer>
     </div>

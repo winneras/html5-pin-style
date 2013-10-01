@@ -57,6 +57,12 @@ body.admin-bar .navbar-fixed-top{
 .masonry-item{
     margin: 5px auto;
 }
+
+.meta-info .glyphicon {
+    color: #777;
+    margin-right: 0.2em;
+}
+
 footer#colophon{
     margin-bottom: 0;
 }
