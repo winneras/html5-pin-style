@@ -41,6 +41,17 @@ if (function_exists('add_image_size')) {
 function ph_widgets() {
     register_sidebar(
             array(
+                'name' => 'NavBarRight',
+                'id' => 'widget-nav-right',
+                'class' => '',
+                'before_widget' => '<div id="%1$s" class="widget %2$s nav navbar-nav navbar-right">',
+                'after_widget' => '</div>',
+                'before_title' => '<h3 class="widget-title">',
+                'after_title' => '</h3>',
+            )
+    );
+    register_sidebar(
+            array(
                 'name' => 'Inline',
                 'id' => 'widget-inline',
                 'class' => '',
