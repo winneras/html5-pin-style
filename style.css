@@ -21,6 +21,9 @@ a, a:hover, a:focus{
     text-decoration: none;
     color: #ea0000;
 }
+a div{
+    color: #333;
+}
 body{
     background: #dddddd url("images/handmadepaper.png") repeat;
 }
@@ -33,6 +36,12 @@ body.admin-bar .navbar-fixed-top{
 .navbar-default .navbar-brand,.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
     color: #ea0000;
 }
+
+.widget ul, .widget li {
+    list-style: none;
+    padding-left: 0;
+}
+
 .navbar .navbar-nav>.active>a {
     -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
     -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);

@@ -7,11 +7,12 @@
 
         <div id="content" role="main" class="index masonry-container">
             <?php if (is_active_sidebar('widget-inline')) : ?>
-                <div id="inline-wedgits" class="masonry-item col-md-4 col-lg-3">
+                <!--<div id="inline-wedgits" class="col-md-4 col-lg-3">
+                </div>-->
 
-                    <?php dynamic_sidebar('Inline'); ?>
+                <?php dynamic_sidebar('Inline'); ?>
 
-                </div>
+
             <?php endif; ?>
 
 
