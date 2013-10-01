@@ -95,5 +95,16 @@ function ph_content_nav($html_id) {
         <?php
     endif;
 }
+
+function ph_get_thumbnail_height($post){
+    $tn_id = get_post_thumbnail_id( $post->ID );
+    $img = wp_get_attachment_image_src( $tn_id, 'category-thumb' );
+    return $img[2];
+}
+
+function ph_is_show_text($post){
+    $img_height = ph_get_thumbnail_height($post);
+    return ($img_height >= 300) ? TRUE : FALSE;
+}
 ?>
 

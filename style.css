@@ -50,6 +50,10 @@ body.admin-bar .navbar-fixed-top{
 #page > .container{
     padding-top: 60px;
 }
+
+.thumbnail .entry-header,.thumbnail .entry-meta{
+    margin: 0 7px;
+}
 .masonry-container h1.entry-title{
     font-size: 24px;
     margin-top: 10px;
@@ -57,6 +61,9 @@ body.admin-bar .navbar-fixed-top{
 .masonry-item{
     margin: 5px auto;
     max-width: 313px;
+}
+.masonry-item .img-responsive{
+    margin: 0 auto;
 }
 
 .meta-info .glyphicon {
@@ -79,6 +86,7 @@ footer#colophon{
 }
 .thumbnail .entry-content p{
     padding: 0.5em 0.7em;
+    margin: 0;
 }
 
 .thumbnail .entry-content .mask {

@@ -6,10 +6,17 @@
                     <div class="post-thumb">
                         <?php the_post_thumbnail('category-thumb', array('class' => 'img-responsive')); ?>
                     </div>
-                <?php endif; ?>
-                <div class="post-content <?php if (has_post_thumbnail()): ?>mask<?php endif; ?>">
+                    <?php if (ph_is_show_text($post)): ?>
+                        <div class="post-content mask">
+                            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 380, "..."); ?></p>
+                        </div>
+                    <?php endif; ?>
+
+                <?php else: ?>
+                <div class="post-content">
                     <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 380, "..."); ?></p>
                 </div>
+                <?php endif; ?>
             </a>
         </div>
 
