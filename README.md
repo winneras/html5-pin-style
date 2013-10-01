@@ -1,14 +1,14 @@
 html5-pin-style
 ===============
-
-The goal is to create a pin style theme for wordpress only use CSS3
-
-Known bugs:
-
-pin style layout not working on opera
-
-not tested with IE9, but not work for IE version < 9
+masonry and bootstrap branch
+version 0.2.0a
 
 
 Live demo:
 http://demo.winjiejie.com/
+
+To do
+ 0.2.1
+integrate with less change color settings in bootstrap 
+ 0.2.2
+remove unused less modules
