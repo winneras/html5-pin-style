@@ -7,8 +7,8 @@
                         <?php the_post_thumbnail('category-thumb', array('class' => 'img-responsive')); ?>
                     </div>
                 <?php endif; ?>
-                <div class="post-content <?php if (has_post_thumbnail()): ?>nodisplay<?php endif; ?>">
-                    <?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 380, "..."); ?>
+                <div class="post-content <?php if (has_post_thumbnail()): ?>mask<?php endif; ?>">
+                    <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 380, "..."); ?></p>
                 </div>
             </a>
         </div>
