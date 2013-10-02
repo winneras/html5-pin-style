@@ -5,6 +5,7 @@ version 0.2.0b
 
 Know Issues:
 footer backgroud size not correct in Android(Chrome)
+
 will not show text content if thumbnail image is small than 300px height
 
 Live demo:
