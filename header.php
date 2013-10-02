@@ -26,16 +26,27 @@
 	<!--[if lt IE 9]>
 		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
 	<![endif]-->
-<div id="page" class="container">
-	<header id="main-header" role="banner" class="clearfix">
-		<hgroup id="site-title-description">
-			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+<div id="page" class="">
+	<header id="main-header" role="banner" class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+		<hgroup id="site-title-description" class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+			<a href="<?php echo home_url(); ?>" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>
 		</hgroup>
 
             
-		<nav id="top-navigation" class="main-navigation" role="navigation">
+		<nav id="top-navigation" class="main-navigation navbar-collapse collapse" role="navigation">
 			
-				<?php wp_nav_menu( array( 'theme_location' => 'top_menu', 'container' => false ) ); ?>
+                    <?php wp_nav_menu( array( 'theme_location' => 'top_menu', 'container' => false, 'items_wrap' => '<ul id="%1$s" class="%2$s nav navbar-nav">%3$s</ul>', ) ); ?>
 			
-		</nav>
+                    <?php if (is_active_sidebar('widget-nav-right')) : ?>
+                        <?php dynamic_sidebar('NavBarRight'); ?>
+                    <?php endif; ?>
+                    
+                </nav>
+            </div>
 	</header>
