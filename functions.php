@@ -6,6 +6,28 @@ if (function_exists('add_theme_support')) {
 add_filter('the_generator', 'ph_wp_generator');
 add_action('widgets_init', 'ph_widgets');
 
+//change wordpress default menu li class to bootstrap default
+add_filter('nav_menu_css_class', 'ph_nav_class', 10, 2);
+
+function ph_nav_class($classes, $item) {
+    if (in_array('current-menu-item', $classes)) {
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+
+//load bootstrap and other js
+add_action('wp_enqueue_scripts', 'ph_enqueue_scripts');
+
+function ph_enqueue_scripts() {
+    wp_enqueue_script('jquery', '', '', '', TRUE);
+    wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/libs/js/bootstrap.min.js', '', '', TRUE);
+    if (!is_single()) {
+        wp_enqueue_script('masonry', get_stylesheet_directory_uri() . '/libs/js/masonry.pkgd.min.js', '', '', TRUE);
+        wp_enqueue_script('masonry-custom', get_stylesheet_directory_uri() . '/libs/js/masonry.custom.js', '', '', TRUE);
+    }
+}
+
 register_nav_menu('top_menu', 'Top Menu');
 
 function ph_wp_generator() {
@@ -19,11 +41,22 @@ if (function_exists('add_image_size')) {
 function ph_widgets() {
     register_sidebar(
             array(
+                'name' => 'NavBarRight',
+                'id' => 'widget-nav-right',
+                'class' => '',
+                'before_widget' => '<div id="%1$s" class="widget %2$s nav navbar-nav navbar-right">',
+                'after_widget' => '</div>',
+                'before_title' => '<h3 class="widget-title">',
+                'after_title' => '</h3>',
+            )
+    );
+    register_sidebar(
+            array(
                 'name' => 'Inline',
                 'id' => 'widget-inline',
                 'class' => '',
-                'before_widget' => '<div id="%1$s" class="widget %2$s pin">',
-                'after_widget' => '</div>',
+                'before_widget' => '<div id="%1$s" class="widget %2$s masonry-item col-md-4 col-lg-3"><div class="thumbnail">',
+                'after_widget' => '</div></div>',
                 'before_title' => '<h3 class="widget-title">',
                 'after_title' => '</h3>',
             )
@@ -34,7 +67,7 @@ function ph_widgets() {
                 'name' => 'Footer',
                 'id' => 'widget-footer',
                 'class' => '',
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'before_widget' => '<div id="%1$s" class="widget %2$s col-md-4 col-lg-3">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
                 'after_title' => '</h3>',
@@ -61,6 +94,17 @@ function ph_content_nav($html_id) {
         </nav><!-- #<?php echo $html_id; ?> .navigation -->
         <?php
     endif;
+}
+
+function ph_get_thumbnail_height($post){
+    $tn_id = get_post_thumbnail_id( $post->ID );
+    $img = wp_get_attachment_image_src( $tn_id, 'category-thumb' );
+    return $img[2];
+}
+
+function ph_is_show_text($post){
+    $img_height = ph_get_thumbnail_height($post);
+    return ($img_height >= 300) ? TRUE : FALSE;
 }
 ?>
 
