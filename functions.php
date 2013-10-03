@@ -113,13 +113,14 @@ add_action('wp_ajax_get_content_summary', 'ph_ajax_get_content_summary');
 add_action('wp_ajax_nopriv_get_content_summary', 'ph_ajax_get_content_summary');
 
 function ph_ajax_get_content_summary() {
+    $posts_per_load = get_option('posts_per_page',TRUE);
     $postType = (isset($_REQUEST['postType'])) ? $_REQUEST['postType'] : 'post';
     $category = (isset($_REQUEST['category'])) ? $_REQUEST['category'] : '';
     $author_id = (isset($_REQUEST['author'])) ? $_REQUEST['author'] : '';
     $taxonomy = (isset($_REQUEST['taxonomy'])) ? $_REQUEST['taxonomy'] : '';
     $tag = (isset($_REQUEST['tag'])) ? $_REQUEST['tag'] : '';
     $exclude = (isset($_REQUEST['postNotIn'])) ? $_REQUEST['postNotIn'] : '';
-    $numPosts = (isset($_REQUEST['numPosts'])) ? $_REQUEST['numPosts'] : 6;
+    $numPosts = (isset($_REQUEST['numPosts'])) ? $_REQUEST['numPosts'] : $posts_per_load;
     $page = (isset($_REQUEST['pageNumber'])) ? $_REQUEST['pageNumber'] : 0;
 
 
@@ -144,13 +145,23 @@ function ph_ajax_get_content_summary() {
     wp_reset_query();
     die();
 }
-
-function ph_load_more_button($html_id = '') {
+/*
+ * 
+ * data-post-type="post" data-category="" data-taxonomy="" data-tag="" data-author="" data-display-posts="6"
+ * 
+ */
+function ph_load_more_button($html_id = '', $query_array = array()) {
     ?>
     <nav id="<?php echo $html_id; ?>" class="col-md-12 text-center" role="navigation">
-        <button type="button" id="load-more" class="btn btn-danger">Load More</button>
+        <button type="button" id="load-more" class="btn btn-danger" <?php ph_echo_query_array($query_array); ?>>Load More</button>
     </nav>
     <?php
+}
+
+function ph_echo_query_array($query_array = array()){
+        foreach ($query_array as $key => $value) {
+        echo ' date-'.$key.'="'.$value.'" ';
+    }
 }
 ?>
 
