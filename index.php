@@ -26,7 +26,10 @@
 
         </div><!-- #content -->
     </div><!-- #primary -->
-    <?php ph_content_nav('nav-below'); ?>
+    <?php 
+        //ph_content_nav('nav-below');
+        ph_load_more_button('more-below');
+    ?>
 </div><!-- #main .wrapper -->
 
 <?php get_footer(); ?>

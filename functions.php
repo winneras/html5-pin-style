@@ -135,12 +135,22 @@ function ph_ajax_get_content_summary() {
     );
     query_posts($args);
     // our loop  
-        while (have_posts()): the_post(); ?> 
-           <?php get_template_part('content', 'summary'); ?>
-        <?php endwhile;
+    while (have_posts()): the_post();
+        ?> 
+        <?php get_template_part('content', 'summary'); ?>
+    <?php
+    endwhile;
 
-    wp_reset_query(); 
+    wp_reset_query();
     die();
+}
+
+function ph_load_more_button($html_id = '') {
+    ?>
+    <nav id="<?php echo $html_id; ?>" class="col-md-12 text-center" role="navigation">
+        <button type="button" id="load-more" class="btn btn-danger">Load More</button>
+    </nav>
+    <?php
 }
 ?>
 

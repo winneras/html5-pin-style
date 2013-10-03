@@ -128,3 +128,8 @@ footer#colophon{
     filter: alpha(opacity=100);
     bottom: 0px;
 }
+
+/* Ajax*/
+#more-below{
+    margin: 1em auto;
+}
