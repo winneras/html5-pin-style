@@ -50,7 +50,9 @@ body.admin-bar .navbar-fixed-top{
 #page > .container{
     padding-top: 60px;
 }
-
+.widget.masonry-item .thumbnail{
+    padding: 4px 1em;
+}
 .thumbnail .entry-header,.thumbnail .entry-meta{
     margin: 0 7px;
 }
