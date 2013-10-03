@@ -9,16 +9,28 @@ jQuery(window).load(function() {
 
 
 /*ajax eg*/
-/*
-jQuery.ajax({
-    type: "POST",
-    url: ajax_url,
-    data: ajax_data,
-    cache: false,
-    success: function (html) {
-        if (html.length > 0) {
-            jQuery("#content").append(html).masonry('reload');
-        }
+
+jQuery(document).ready(function($) {
+    var ajaxurl = '/wp-admin/admin-ajax.php';
+
+    jQuery('#load-more').click(function() {
+        $.ajax({
+            type: 'post',
+            url: ajaxurl,
+            //dataType: 'json',
+            data: {
+                action: 'get_content_summary',
+                pageNumber: 1,
+                numPosts: 3
+            },
+            success: function(html) {
+                // This outputs the result of the ajax request
+                jQuery('.site-info').append(html);
+                console.log(html);
+            },
+            error: function(errorThrown) {
+                console.log(errorThrown);
+            }
+        });
     });
 });
-*/

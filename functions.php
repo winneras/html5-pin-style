@@ -96,15 +96,65 @@ function ph_content_nav($html_id) {
     endif;
 }
 
-function ph_get_thumbnail_height($post){
-    $tn_id = get_post_thumbnail_id( $post->ID );
-    $img = wp_get_attachment_image_src( $tn_id, 'category-thumb' );
+function ph_get_thumbnail_height($post) {
+    $tn_id = get_post_thumbnail_id($post->ID);
+    $img = wp_get_attachment_image_src($tn_id, 'category-thumb');
     return $img[2];
 }
 
-function ph_is_show_text($post){
+function ph_is_show_text($post) {
     $img_height = ph_get_thumbnail_height($post);
     return ($img_height >= 300) ? TRUE : FALSE;
+}
+
+/* Ajax */
+
+add_action('wp_ajax_get_content_summary', 'ph_ajax_get_content_summary');
+add_action('wp_ajax_nopriv_get_content_summary', 'ph_ajax_get_content_summary');
+
+function ph_ajax_get_content_summary() {
+    $postType = (isset($_REQUEST['postType'])) ? $_REQUEST['postType'] : 'post';
+    $category = (isset($_REQUEST['category'])) ? $_REQUEST['category'] : '';
+    $author_id = (isset($_REQUEST['author'])) ? $_REQUEST['author'] : '';
+    $taxonomy = (isset($_REQUEST['taxonomy'])) ? $_REQUEST['taxonomy'] : '';
+    $tag = (isset($_REQUEST['tag'])) ? $_REQUEST['tag'] : '';
+    $exclude = (isset($_REQUEST['postNotIn'])) ? $_REQUEST['postNotIn'] : '';
+    $numPosts = (isset($_REQUEST['numPosts'])) ? $_REQUEST['numPosts'] : 6;
+    $page = (isset($_REQUEST['pageNumber'])) ? $_REQUEST['pageNumber'] : 0;
+
+
+    $args = array(
+        'post_type' => $postType,
+        'category_name' => $category,
+        'author' => $author_id,
+        'posts_per_page' => $numPosts,
+        'paged' => $page,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
+    );
+    query_posts($args);
+    // our loop  
+    if (have_posts()) :
+        $i = 0;
+        while (have_posts()):
+            $i++;
+            the_post();
+            ?> 
+            <li <?php if ($i == 2) {
+                $i = 0;
+                echo 'class="even"';
+            } ?>>		
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <p class="meta">
+            <?php the_time('F j, Y'); ?>
+                </p>
+            <?php the_excerpt(); ?>
+            </div>
+            </li>
+        <?php endwhile;
+    endif;
+    wp_reset_query(); 
 }
 ?>
 

@@ -9,7 +9,7 @@
             </div>
         <?php endif; ?>
         <div class="site-info">
-
+            <a href="#" id="load-more">Load More</a>
 
         </div><!-- .site-info -->
     </div>
