@@ -135,26 +135,12 @@ function ph_ajax_get_content_summary() {
     );
     query_posts($args);
     // our loop  
-    if (have_posts()) :
-        $i = 0;
-        while (have_posts()):
-            $i++;
-            the_post();
-            ?> 
-            <li <?php if ($i == 2) {
-                $i = 0;
-                echo 'class="even"';
-            } ?>>		
-                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <p class="meta">
-            <?php the_time('F j, Y'); ?>
-                </p>
-            <?php the_excerpt(); ?>
-            </div>
-            </li>
+        while (have_posts()): the_post(); ?> 
+           <?php get_template_part('content', 'summary'); ?>
         <?php endwhile;
-    endif;
+
     wp_reset_query(); 
+    die();
 }
 ?>
 

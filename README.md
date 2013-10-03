@@ -18,3 +18,8 @@ integrate with less change color settings in bootstrap
 remove unused less modules
  0.2.3
 add option about how to deal with small thumbnail image
+
+
+Credits:
+
+Thansk https://github.com/dcooney for some code about ajax
