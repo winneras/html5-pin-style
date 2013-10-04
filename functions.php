@@ -82,13 +82,13 @@ function ph_content_nav($html_id) {
 
     if ($wp_query->max_num_pages > 1) :
         ?>
-        <nav id="<?php echo $html_id; ?>" class="navigation clearfix" role="navigation">
-            <div class="nav-previous alignleft"><?php next_posts_link(__('<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve')); ?></div>
-            <div class="nav-next alignright"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve')); ?></div>
+        <nav id="<?php echo $html_id; ?>" class="col-md-12 clearfix" role="navigation">
+            <div class="nav-previous pull-left"><?php next_posts_link(__('<span class="glyphicon glyphicon-chevron-left"></span> Older posts', 'twentytwelve')); ?></div>
+            <div class="nav-next pull-right"><?php previous_posts_link(__('Newer posts <span class="glyphicon glyphicon-chevron-right"></span>', 'twentytwelve')); ?></div>
         </nav><!-- #<?php echo $html_id; ?> .navigation -->
     <?php elseif (is_single()) : ?>
 
-        <nav id="<?php echo $html_id; ?>" class="navigation clearfix" role="navigation">
+        <nav id="<?php echo $html_id; ?>" class="col-md-12 clearfix" role="navigation">
             <div class="nav-previous alignleft"><?php previous_post_link('&larr; %link') ?></div>
             <div class="nav-next alignright"><?php next_post_link('%link &rarr;') ?></div>
         </nav><!-- #<?php echo $html_id; ?> .navigation -->
@@ -104,11 +104,13 @@ function ph_get_thumbnail_height($post) {
 
 function ph_is_show_text($post) {
     $img_height = ph_get_thumbnail_height($post);
-    return ($img_height >= 300) ? TRUE : FALSE;
+    return ($img_height >= 320) ? TRUE : FALSE;
 }
 
-/* Ajax */
-
+/*
+ * 
+ *  Give up Ajax because very hard to make masonry work for unknow width and height of image  */
+/*
 add_action('wp_ajax_get_content_summary', 'ph_ajax_get_content_summary');
 add_action('wp_ajax_nopriv_get_content_summary', 'ph_ajax_get_content_summary');
 
@@ -144,12 +146,12 @@ function ph_ajax_get_content_summary() {
 
     wp_reset_query();
     die();
-}
+}*/
 /*
  * 
  * data-post-type="post" data-category="" data-taxonomy="" data-tag="" data-author="" data-display-posts="6"
  * 
- */
+ 
 function ph_load_more_button($html_id = '', $query_array = array()) {
     ?>
     <nav id="<?php echo $html_id; ?>" class="col-md-12 text-center" role="navigation">
@@ -163,5 +165,7 @@ function ph_echo_query_array($query_array = array()){
         echo ' date-'.$key.'="'.$value.'" ';
     }
 }
+ * 
+ */
 ?>
 

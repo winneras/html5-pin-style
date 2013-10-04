@@ -27,8 +27,8 @@
         </div><!-- #content -->
     </div><!-- #primary -->
     <?php 
-        //ph_content_nav('nav-below');
-        ph_load_more_button('more-below');
+        ph_content_nav('nav-below');
+        //ph_load_more_button('more-below');
     ?>
 </div><!-- #main .wrapper -->
 

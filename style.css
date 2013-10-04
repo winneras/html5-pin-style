@@ -130,6 +130,6 @@ footer#colophon{
 }
 
 /* Ajax*/
-#more-below{
+#more-below,#nav-below{
     margin: 1em auto;
 }
