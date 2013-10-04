@@ -24,6 +24,7 @@ function ph_enqueue_scripts() {
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/libs/js/bootstrap.min.js', '', '', TRUE);
     if (!is_single()) {
         wp_enqueue_script('masonry', get_stylesheet_directory_uri() . '/libs/js/masonry.pkgd.min.js', '', '', TRUE);
+        wp_enqueue_script('imagesloaded', get_stylesheet_directory_uri() . '/libs/js/imagesloaded.pkgd.min.js', '', '', TRUE);
         wp_enqueue_script('masonry-custom', get_stylesheet_directory_uri() . '/libs/js/masonry.custom.js', '', '', TRUE);
     }
 }
@@ -110,7 +111,7 @@ function ph_is_show_text($post) {
 /*
  * 
  *  Give up Ajax because very hard to make masonry work for unknow width and height of image  */
-/*
+
 add_action('wp_ajax_get_content_summary', 'ph_ajax_get_content_summary');
 add_action('wp_ajax_nopriv_get_content_summary', 'ph_ajax_get_content_summary');
 
@@ -146,11 +147,11 @@ function ph_ajax_get_content_summary() {
 
     wp_reset_query();
     die();
-}*/
+}
 /*
  * 
  * data-post-type="post" data-category="" data-taxonomy="" data-tag="" data-author="" data-display-posts="6"
- * 
+ * */
  
 function ph_load_more_button($html_id = '', $query_array = array()) {
     ?>
@@ -165,7 +166,5 @@ function ph_echo_query_array($query_array = array()){
         echo ' date-'.$key.'="'.$value.'" ';
     }
 }
- * 
- */
 ?>
 

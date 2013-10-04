@@ -1,14 +1,14 @@
 jQuery(window).load(function() {
     var container = jQuery('.masonry-container');
-   /* var button = jQuery('#load-more');
+    var button = jQuery('#load-more');
     var ajaxurl = '/wp-admin/admin-ajax.php';
-    var page = 2;*/
+    var page = 2;
 
     container.masonry({
         columnWidth: '.masonry-item',
         itemSelector: '.masonry-item'
     });
-/*
+
     jQuery(button).click(function() {
         jQuery.ajax({
             type: 'post',
@@ -22,16 +22,20 @@ jQuery(window).load(function() {
                 // This outputs the result of the ajax request
 
                 var el = jQuery(html);
-                container.append(el).masonry('appended', el, true);
-                page++;
+                container.append(el);
+                container.imagesLoaded(function() {
+                    container.masonry('appended', el, true);
+                    page++;
+                });
 
-                //console.log(page);
-                //console.log(el);
+
+                console.log(page);
+                console.log(el);
 
             },
             error: function(errorThrown) {
                 console.log(errorThrown);
             }
         });
-    });*/
+    });
 });
