@@ -90,8 +90,8 @@ function ph_content_nav($html_id) {
     <?php elseif (is_single()) : ?>
 
         <nav id="<?php echo $html_id; ?>" class="col-md-12 clearfix" role="navigation">
-            <div class="nav-previous alignleft"><?php previous_post_link('&larr; %link') ?></div>
-            <div class="nav-next alignright"><?php next_post_link('%link &rarr;') ?></div>
+            <div class="nav-previous pull-left"><?php previous_post_link('<span class="glyphicon glyphicon-chevron-left"></span> %link') ?></div>
+            <div class="nav-next pull-right"><?php next_post_link('%link <span class="glyphicon glyphicon-chevron-right"></span>') ?></div>
         </nav><!-- #<?php echo $html_id; ?> .navigation -->
         <?php
     endif;
