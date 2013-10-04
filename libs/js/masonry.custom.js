@@ -1,3 +1,10 @@
+function preload(arrayOfImages, callback){
+    jQuery(arrayOfImages).each(function(){
+        jQuery('<img/>')[0].src = this;
+    });
+    callback();
+}
+
 jQuery(window).load(function() {
     var container = jQuery('.masonry-container');
     var button = jQuery('#load-more');
@@ -20,11 +27,17 @@ jQuery(window).load(function() {
             },
             success: function(html) {
                 // This outputs the result of the ajax request
+                
                 var el = jQuery(html);
-                container.append(el).masonry('appended', el, true);
-                page++;
-                console.log(page);
-                console.log(el);
+                var images = el.find('img').map(function(){return this.src}).get();
+                preload(images,function(){
+                    container.append(el).masonry('appended', el, true);
+                    //console.log(images);
+                    page++;
+                });                              
+                //console.log(page);
+                //console.log(el);
+                
             },
             error: function(errorThrown) {
                 console.log(errorThrown);
